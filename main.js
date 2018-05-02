@@ -348,5 +348,5 @@ function getPrefix(server) {
     }
   });
 }
-    console.log(process.env+"<");
+
 client.login(process.env.token);
