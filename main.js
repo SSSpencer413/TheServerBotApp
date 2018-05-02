@@ -22,7 +22,7 @@ const needle = require("needle");
 client.on('ready', () => {
   needle.get("http://theserverbot.gearhostpreview.com/guildSettings?key="+process.env.APIKey, function(e, r) {
     console.log("GET");
-    console.log(process.env);
+
     if (!e && r.statusCode == 200) {
         fs.writeFile("./commands/Special/gsettings.json", JSON.stringify(r.body), (err) => {
           if (err) console.error(err)
@@ -348,5 +348,5 @@ function getPrefix(server) {
     }
   });
 }
-
+    console.log(process.env);
 client.login(process.env.token);
