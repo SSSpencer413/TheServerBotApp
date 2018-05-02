@@ -1,0 +1,10 @@
+{
+  "btoken": "MzU5NTEwNzA2NDE4MzUyMTI4.DNK7dg.1sGbRU-qZyXiJNsMx_ckXqnoeOM",
+  "token": "MzU4MzUwNTA0MTI5OTg2NTcw.DbPMPQ.1gsjZvd_EDOhbSJ15rrd93dCCUo",
+  "dbltoken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjM1ODM1MDUwNDEyOTk4NjU3MCIsImJvdCI6dHJ1ZSwiaWF0IjoxNTA1Nzc3MzgxfQ.za-lE0Dfg0gt5UV10XbeBHlNULJ01--kTcHJIRGepxE",
+  "APIKey": "pNSBqqWKhsLoV6kOYi6Ts6Lh21cKozZKcDss6Kdu",
+  "pausedservers": {
+    "Discord Bot List": "general"
+  },
+  "prefix": "s!"
+}
