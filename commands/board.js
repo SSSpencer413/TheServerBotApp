@@ -17,7 +17,7 @@ exports.run = (client, msg, args) => {
   }];
   data.username = msg.guild.name;
   data.avatar_url = msg.guild.iconURL;
-  needle.post("https://discordapp.com/api/webhooks/377946032765665291/mbrUVRnB2_xsvm3boFX3SfNC_ACqeUrk_oAZBarQR3Jo3kBXsyNJ4KBirilybE_YPqZI", data, {content_type:"application/json"})
+  needle.post("https://discordapp.com/api/webhooks/377946032765665291/"+process.env.Board_Webhook, data, {content_type:"application/json"})
   msg.channel.send({embed: {
     color: 16776960,
     title: "Fun",

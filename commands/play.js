@@ -1,6 +1,7 @@
 const error = require("./Special/Error.js");
 exports.run = (client, msg, args) => {
-
+  error.fire(msg, `Command coming soon...`);
+/*
   // play streams using ytdl-core
   const ytdl = require('ytdl-core');
   const streamOptions = { seek: 0, volume: 1 };
@@ -27,7 +28,7 @@ exports.run = (client, msg, args) => {
     });
    })
    .catch(console.error);
-
+*/
 }
 
 

@@ -4,13 +4,14 @@
   "description": "",
   "main": "main.js",
   "dependencies": {
-    "discord.js": "^11.3.2",
     "discordbots.org-api": "^1.0.2",
     "ffmpeg": "0.0.4",
     "ffmpeg-binaries": "^3.2.2-3",
-    "needle": "^2.2.0",
-    "opusscript": "0.0.6",
-    "ytdl-core": "^0.20.2"
+    "needle": "^2.0.1",
+    "opusscript": "0.0.4",
+    "websocket": "^1.0.25",
+    "ws": "^4.0.0",
+    "ytdl-core": "^0.18.7"
   },
   "devDependencies": {},
   "scripts": {

@@ -3,7 +3,7 @@ exports.run = (client, msg, args) => {
 
   msg.channel.send({
     embed: {
-    color: 16776960,
+    color: 9936031,
     title: "Coming Soon!!!",
     description:"You have found a secret!!",
   }
@@ -12,12 +12,12 @@ exports.run = (client, msg, args) => {
 
 exports.help = (client, msg) => {
   let info = {};
-  info.Description = "Shows the pong.";
-  info.Name = "pong";
-  info.Usage = "pong";
-  info.Example = "s!pong";
-  info.Category = "Fun";
-  info.Color = 16776960;
+  info.Description = "Custom commands maybe? ;)";
+  info.Name = "custom";
+  info.Usage = "custom <CmdName>";
+  info.Example = "s!custom pling";
+  info.Category = "Misc";
+  info.Color = 9936031;
 
   return info;
 }

@@ -31,7 +31,7 @@ function removewarn(msg, id, reason) {
           return error.fire(msg, "That ID wasn't found!");
         } else {
           if (body[msg.guild.id][id-1]) {
-            const data = body[msg.guild.id][id];
+            var data = body[msg.guild.id][id];
             body[msg.guild.id][id] = false;
             needle.post("http://theserverbot.gearhostpreview.com/moderation?key="+process.env.APIKey, body, {content_type:"application/json"}, function(re, er){
               if (!e && r.statusCode == 200) {

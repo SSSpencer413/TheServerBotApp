@@ -11,7 +11,7 @@ exports.run = (client, msg, args) => {
   let member = msg.mentions.members.first();
   if(member == undefined || member == null) return error.fire(msg, `Please ping someone to duel!`);
   if (wounded.has(member.id)) return error.fire(msg, "That person is wounded!");
-  //if (member.id == msg.author.id) return error.fire(msg, "You can't duel yourself!");
+  if (member.id == msg.author.id) return error.fire(msg, "You can't duel yourself!");
   var amount = parseInt(args[1]);
   if(!amount || amount == undefined || amount < 1) return error.fire(msg, `Please enter in a positive amount to duel!`);
   cfunctions.getList().then(r => {

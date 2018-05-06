@@ -77,7 +77,7 @@ exports.updateBalance = (body, person, table, promise) => {
             fdata["Credits"][table.id] = table["Credits"];
             fdata["Cubes"] = table.Cubes
             data[person.id] = fdata
-            needle.post("http://theserverbot.gearhostpreview.com/currency?key=?key="+process.env.APIKey, data, {content_type:"application/json"}, function(er,re){
+            needle.post("http://theserverbot.gearhostpreview.com/currency?key="+process.env.APIKey, data, {content_type:"application/json"}, function(er,re){
               if (!er && re.statusCode == 200) {
                 return true;
               } else {

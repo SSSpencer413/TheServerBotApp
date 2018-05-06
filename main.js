@@ -4,25 +4,14 @@ const fs = require("fs");
 const config = require("./config.json");
 const ownerlist = require("./commands/Special/owners.json");
 const Helper = require("discordbots.org-api");
-const DiscordBots = new Helper(process.env.dbltoken);
+const DiscordBots = new Helper(config.dbltoken);
 const needle = require("needle");
-/*
-"discord.js": "^11.3.0",
-"discordbots.org-api": "^1.0.2",
-"ffmpeg": "0.0.4",
-"ffmpeg-binaries": "^3.2.2-3",
-"needle": "^2.0.1",
-"opusscript": "0.0.4",
-"websocket": "^1.0.25",
-"ws": "^4.0.0",
-"ytdl-core": "^0.18.7"
-*/
+
 //https://discordapp.com/oauth2/authorize?client_id=358350504129986570&scope=bot&permissions=8
 //<:CrossMark:370726096188080158> <:Checkmark:370726078857084938> <a:Loading:394129577720676354> <:Patreon:394168730193625088>
 client.on('ready', () => {
   needle.get("http://theserverbot.gearhostpreview.com/guildSettings?key="+process.env.APIKey, function(e, r) {
     console.log("GET");
-
     if (!e && r.statusCode == 200) {
         fs.writeFile("./commands/Special/gsettings.json", JSON.stringify(r.body), (err) => {
           if (err) console.error(err)
@@ -117,7 +106,7 @@ if (message.channel.type == "text") {
       banned = true
     }
   }
-  if (ownerlist[message.author.id] ) { //|| server.owner.id == message.author.id
+  if (ownerlist[message.author.id] || server.owner.id == message.author.id) {
     banned = false
   }
   if(banned) {
@@ -349,4 +338,4 @@ function getPrefix(server) {
   });
 }
 
-client.login(process.env.token);
+client.login(config.token);
