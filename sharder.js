@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
-const config = require("./config.json");
-const Manager = new Discord.ShardingManager('./main.js', {totalShards: "auto", token: config.token});
+const Manager = new Discord.ShardingManager('./main.js', {totalShards: "auto", token: process.env.token});
 const logger = require("./commands/Special/Logger.js");
 Manager.spawn();
 
