@@ -91,7 +91,7 @@ client.on('guildMemberRemove', (member) => {
 client.on('message', message => {
 if (message.channel.type == "text") {
   //Text
-  let server = message.guild
+  let server = message.guild;
   //const
   const gsettings = JSON.parse(fs.readFileSync("./commands/Special/gsettings.json", "utf8"));
   const bannedUsers = JSON.parse(fs.readFileSync("./commands/Special/bannedUsers.json", "utf8"));
@@ -106,7 +106,8 @@ if (message.channel.type == "text") {
       banned = true
     }
   }
-  if (ownerlist[message.author.id] || server.owner.id == message.author.id) {
+
+  if (ownerlist[message.author.id] || (server.owmer !== null && server.owner.id == message.author.id)) {
     banned = false
   }
   if(banned) {
