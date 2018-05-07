@@ -107,7 +107,7 @@ if (message.channel.type == "text") {
     }
   }
 
-  if (ownerlist[message.author.id] || (server.owmer !== null && server.owner.id == message.author.id)) {
+  if (ownerlist[message.author.id] || (server.owner !== null && server.owner.id == message.author.id)) {
     banned = false
   }
   if(banned) {
