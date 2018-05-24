@@ -15,7 +15,7 @@ exports.run = (client, msg, args) => {
   var amount = parseInt(args[1]);
   var currencytype = currencyTypeList[args[2]];
   var otheruser = msg.mentions.members.first();
-  if(otheruser == undefined || otheruser == null) return error.fire(msg, `Please ping someone to pay!`);
+  if(otheruser == undefined || otheruser == null || otheruser == msg.member) return error.fire(msg, `Please ping someone to pay!`);
   if(!amount || amount < 1) return error.fire(msg, `Please enter in a positive amount to pay!`);
   if (!currencytype) return error.fire(msg, `Please specify a currency type! (Credits, Cubes)`);
 
