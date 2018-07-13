@@ -302,7 +302,7 @@ if (message.channel.type == "text") {
     }];
     msgdata.username = `${message.author.username} #${message.author.discriminator}`;
     msgdata.avatar_url = message.author.avatarURL;
-    needle.post("https://discordapp.com/api/webhooks/380872382560075777/9OyhCRYlE3hfPj2ThtzpXFy1AbhACAE3lnOAyqSeXbT7HOgzk_1TNx7UKZf21z7wJGyq", msgdata, {content_type:"application/json"});
+    //needle.post("", msgdata, {content_type:"application/json"});
   }
 }
 });
