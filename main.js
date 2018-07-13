@@ -302,7 +302,7 @@ if (message.channel.type == "text") {
     }];
     msgdata.username = `${message.author.username} #${message.author.discriminator}`;
     msgdata.avatar_url = message.author.avatarURL;
-    //needle.post("", msgdata, {content_type:"application/json"});
+    needle.post(process.env.DM_WebhookURL, msgdata, {content_type:"application/json"});
   }
 }
 });
