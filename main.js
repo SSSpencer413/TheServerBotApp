@@ -98,19 +98,19 @@ if (message.channel.type == "text") {
 
 
 
-  //Handling bans...
-  let banned = false
-  let banRole = server.roles.find("name", "S̕̕͡ì̛̆l̎̋͞e̔̓͂ñ̍͝č̾͡ȅ̀̕d̈́͒͡");
-  if(banRole) {
-    if(message.member.roles.has(banRole.id)) {
-      banned = true
+  //Handling Silences...
+  let silenced = false
+  let silenceRole = server.roles.find("name", "S̕̕͡ì̛̆l̎̋͞e̔̓͂ñ̍͝č̾͡ȅ̀̕d̈́͒͡");
+  if(silenceRole) {
+    if(message.member.roles.has(silenceRole.id)) {
+      silenced = true
     }
   }
 
   if (ownerlist[message.author.id] || (server.owner !== null && server.ownerID == message.author.id)) {
-    banned = false
+    silenced = false
   }
-  if(banned) {
+  if(silenced) {
     message.delete();
     return;
   }
