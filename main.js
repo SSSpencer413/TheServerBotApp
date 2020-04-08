@@ -68,7 +68,6 @@ client.on('guildMemberAdd', (member) => {
       }
     }
   }
-  console.log(`${member.user.username} has joined ${member.guild.name}!`);
 });
 
 client.on('guildMemberRemove', (member) => {
