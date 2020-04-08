@@ -129,19 +129,6 @@ if (message.channel.type == "text") {
   //
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
-
-/*  //AuditLogs
-  let AuditLogs = JSON.parse(fs.readFileSync("./commands/Special/auditlogs.json", "utf8"));
-  AuditLogs[`${message.id}`] =  {
-    'author': `<@${message.author.id}>`,
-    'content': message.content
-  }
-  fs.writeFile("./commands/Special/auditlogs.json", JSON.stringify(AuditLogs), (err) => {
-    if (err) console.error(err)
-  }); */
-
-
-
   //human reactions
  if (message.content.indexOf(`<@${client.user.id}>`) !== -1) {
     let emojiReact = ["📞", "👋", "👂", "✍️", "👁️", "📝", "🆗"];
@@ -274,36 +261,7 @@ if (message.channel.type == "text") {
     } catch (err) {
       console.error(err);
     }
-  } else {
-    //Others
-    message.channel.send({embed: {
-      title: "Warning!",
-      color: 15158332,
-      description: `All DMs are logged and public!\nDo **not** send things to this bot you don't want the mods to see!`,
-      footer: {
-        text: "Yes, they are allowed to judge you based on it! (But not punish you!)"
-      }
-    }});
-    let msgdata = {}
-    msgdata.embeds = [{
-      color: 3447003,
-      title: `Message Id: ${message.id}`,
-      author: {
-        name: `Author Id: ${message.author.id}`
-      },
-      description: "**Content: **"+message.content,
-      timestamp: message.createdtimestamp,
-      fields: [
-        {
-          name: "Attachments:",
-          value: `${Array.from(message.attachments)[0] == undefined ? Array.from(message.attachments)[0][1].url: `none`}`
-        }
-      ],
-    }];
-    msgdata.username = `${message.author.username} #${message.author.discriminator}`;
-    msgdata.avatar_url = message.author.avatarURL;
-    needle.post(process.env.DM_WebhookURL, msgdata, {content_type:"application/json"});
-  }
+  } 
 }
 });
 
