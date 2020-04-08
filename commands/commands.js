@@ -154,17 +154,6 @@ const ownerlist = require("./Special/owners.json");
                 },
               ]
             }
-          var patcmd = {
-              title: "<:Patreon:394168730193625088> Patreon Commands:",
-              color: 0xF6705D,
-              description: "A list of commands for Patreon users only",
-              fields: [
-                {
-                    name: `${pre}shout <Message>`,
-                    value: "Shout a message through all of this shard's servers!",
-                },
-              ]
-            }
           var misccmd = {
               title: "Miscellaneous Commands:",
               color: 9936031,
@@ -226,8 +215,7 @@ const ownerlist = require("./Special/owners.json");
             3: crecmd,
             4: DMcmd,
             5: misccmd,
-            6: pvpcmd,
-            7: patcmd
+            6: pvpcmd
           }
   }
   function getPrefix(server) {
@@ -264,33 +252,21 @@ exports.run = (client, msg, args) => {
   }
   getPrefix(msg.guild).then((p) => {
     emb = getEmbed(p)
-    msg.author.send({embed: emb[5]});
-    if (client.guilds.get("358676045500776451").members.get(msg.author.id)) {
-      let user = client.guilds.get("358676045500776451").members.get(msg.author.id);
 
-      const patreonRole = ["Patrons"];
-      let hasPatRole = user.roles.some(role => patreonRole.includes(role.name));
-      if(ownerlist[msg.author.id]) {
-        hasPatRole = true
-      }
-
-      if (hasPatRole) {
-        msg.author.send({embed: emb[7]});
-      }
-    }
-    msg.author.send({embed: emb[6]});
-    msg.author.send({embed: emb[0]});
-    msg.author.send({embed: emb[1]});
+    msg.channel.send({embed: emb[5]});
+    msg.channel.send({embed: emb[6]});
+    msg.channel.send({embed: emb[0]});
+    msg.channel.send({embed: emb[1]});
 
 
     if (hasModRole) {
-      msg.author.send({embed: emb[2]});
+      msg.channel.send({embed: emb[2]});
       if (hasHighRole || ownerlist[msg.author.id] || msg.guild.owner.id == msg.author.id) {
-        msg.author.send({embed: emb[3]});
+        msg.channel.send({embed: emb[3]});
       }
     }
     if (ownerlist[msg.author.id]) {
-      msg.author.send({embed: emb[4]});
+      msg.channel.send({embed: emb[4]});
     }
 
     msg.channel.send({embed:{
