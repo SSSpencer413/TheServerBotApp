@@ -101,9 +101,9 @@ if (message.channel.type == "text") {
   let silenced = false
   let silenceRole = server.roles.find("name", "S̕̕͡ì̛̆l̎̋͞e̔̓͂ñ̍͝č̾͡ȅ̀̕d̈́͒͡");
   if(silenceRole) {
-    if(message.member.roles.has(silenceRole.id)) {
-      silenced = true
-    }
+  //  if(message.member.roles.has(silenceRole.id)) {
+  //     silenced = true
+  //  }
   }
 
   if (ownerlist[message.author.id] || (server.owner !== null && server.ownerID == message.author.id)) {
